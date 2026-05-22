@@ -4,13 +4,12 @@
   "version": "1.0.0",
   "description": "Analyze e-commerce websites and generate optimized conversion-focused templates",
   "permissions": [
-    "activeTab",
-    "scripting",
     "storage",
-    "fetch"
+    "activeTab"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "https://*/*",
+    "http://*/*"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -19,20 +18,6 @@
   "background": {
     "service_worker": "background.js"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content-script.js"],
-      "run_at": "document_start",
-      "all_frames": false
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["preview.html"],
-      "matches": ["<all_urls>"]
-    }
-  ],
   "icons": {
     "16": "images/icon-16.png",
     "48": "images/icon-48.png",
